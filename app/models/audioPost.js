@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const audioCommentSchema = require('./audioComment')
 
 const audioPostSchema = new mongoose.Schema({
   title: {
@@ -12,6 +13,7 @@ const audioPostSchema = new mongoose.Schema({
   picture: {
     type: String
   },
+  comment: [audioCommentSchema],
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

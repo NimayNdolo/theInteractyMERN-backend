@@ -1,12 +1,10 @@
 const mongoose = require('mongoose')
-const textCommentSchema = require('./textComment')
 
-const textPostSchema = new mongoose.Schema({
+const commerceCommentSchema = new mongoose.Schema({
   text: {
     type: String,
     required: true
   },
-  comment: [textCommentSchema],
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
@@ -16,4 +14,4 @@ const textPostSchema = new mongoose.Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('Text', textPostSchema)
+module.exports = commerceCommentSchema

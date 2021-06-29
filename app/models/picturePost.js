@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const pictureCommentSchema = require('./pictureComment.js')
 
 const picturePostSchema = new mongoose.Schema({
   picture: {
@@ -8,6 +9,7 @@ const picturePostSchema = new mongoose.Schema({
   text: {
     type: String
   },
+  comment: [pictureCommentSchema],
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
